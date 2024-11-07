@@ -1,0 +1,43 @@
+services:
+  shoptrack_api:
+    container_name: 'shoptrackapicontainer'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: shptapp
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    depends_on:
+      - mysqldb
+    environment:
+      DB_NAME: shpdb
+      DB_HOST: localhost
+      DB_PORT: 3307
+      DB_USERNAME: admin
+      DB_PASSWORD: 'admin1234'
+      PORT: 3000
+    networks:
+      - internalnet
+    volumes:
+      - ./src:/usr/src/app/src
+  mysqldb:
+    container_name: 'mysqlcontainer'
+    image: mysql:9.0
+    restart: always
+    ports:
+      - 3307:3307
+    expose:
+      - 3307
+    environment:
+      MYSQL_DATABASE: shpdb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin1234
+      MYSQL_ROOT_PASSWORD: rt_user
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge

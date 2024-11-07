@@ -1,0 +1,15 @@
+npm i -g @nestjs/cli
+nest new project-name
+
+yarn add @nestjs/typeorm typeorm mysql2
+yarn add @nestjs/swagger
+yarn add bcrypt
+yarn @nestjs/jwt @nestjs/passport passport passport-jwt
+
+Docker
+docker build -t shoptrack_api .
+docker build -t shoptrack_prod -f Dockerfile.prod .
+
+docker run -p 3000:3000 shoptrack_api
+
+docker-compose up --build

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box; /* Ensure padding and borders don't cause overflow */
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1in; /* 1-inch margin for the document */
+        width: calc(vw - 2in); /* Adjust width based on the margins */
+        word-wrap: break-word; /* Handle long text */
+      }
+      .main {
+        width: 100%; /* Let the main container take full width */
+      }
+      .info {
+        width: 300px;
+      }
+      .two-columns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap; /* Ensure columns wrap if space is too tight */
+      }
+      .title {
+        font-weight: 500;
+
+        text-align: justify;
+      }
+      .questions {
+        height: 2rem;
+        background-color: yellow;
+        word-wrap: break-word; /* Break long words if necessary */
+      }
+      .answer {
+        width: 50px;
+        word-wrap: break-word; /* Ensure answers don't overflow */
+      }
+      /* Ensures data stays on one page */
+      .data-page {
+        page-break-after: always;
+      }
+      /* Adjust picture layout for two per page, one top and one bottom */
+      .picture-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Top and bottom layout */
+        height: calc(
+          100vh - 2in
+        ); /* Use full page height minus top/bottom margins */
+        page-break-before: always;
+        margin-top: 1in;
+        margin-bottom: 1in;
+        background-color: red;
+      }
+      /* Ensure image takes available space but maintains aspect ratio */
+      .picture-page img {
+        max-width: 100%;
+        max-height: 40%; /* Adjust to ensure both images fit within page height */
+        object-fit: contain;
+      }
+      /* Comment section on its own page */
+      .comments-page {
+        page-break-before: always;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Report</h1>
+
+      <!-- DATA -->
+      <div class="two-columns">
+        <div class="info">
+          <p>Job</p>
+          <p>Piecemark:</p>
+          <p>Type of Inspection</p>
+          <p>Inspector:</p>
+          <p>Fabricator:</p>
+          <p>Non Conformance:</p>
+          <p>Fit-Up Inspection</p>
+        </div>
+        <div>
+          <p>\${rep.job}</p>
+          <p>\${rep['piecemark']}</p>
+          <p>\${rep.non_conformance ? 'Yes' : 'No'}</p>
+          <p>\${rep.fabricator.name}</p>
+          <p>\${rep.inspector.name}</p>
+        </div>
+      </div>
+
+      <!-- INSPECTION CRITERIA -->
+
+      <h2>Inspection Criteria</h2>
+      <div class="two-columns data-page">
+        <div class="title questions">
+          <p class="questions">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error nam
+            ipsa soluta consectetur.
+          </p>
+          <p class="questions">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
+            doloribus? kjfsf sknfksdf
+          </p>
+          <p class="questions">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
+            doloribus?
+          </p>
+        </div>
+        <div class="answer">
+          <p class="questions">Yes</p>
+          <p class="questions">No</p>
+          <p class="questions">Yes</p>
+        </div>
+      </div>
+
+      <!-- PICTURES - Two pictures per page, one top, one bottom -->
+      <div class="pictures">
+        <h2>Picture</h2>
+        <div class="picture-page">
+          <img
+            src="https://drive.google.com/thumbnail?id=1GpQhWkIzzefACPCyg3uTg60mF6iH8Dwu&sz=w10000"
+            alt="material image"
+          />
+          <img
+            src="https://drive.google.com/thumbnail?id=1GpQhWkIzzefACPCyg3uTg60mF6iH8Dwu&sz=w1000"
+            alt="material image"
+          />
+        </div>
+        <div class="picture-page">
+          <img
+            src="https://drive.google.com/thumbnail?id=1GpQhWkIzzefACPCyg3uTg60mF6iH8Dwu&sz=w1000"
+            alt="material image"
+          />
+          <img
+            src="https://drive.google.com/thumbnail?id=1GpQhWkIzzefACPCyg3uTg60mF6iH8Dwu&sz=w1000"
+            alt="material image"
+          />
+        </div>
+      </div>
+
+      <!-- COMMENTS - Start on a new page -->
+      <div class="comments-page">
+        <h2>Comments</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
+          dolore!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

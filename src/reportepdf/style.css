@@ -1,0 +1,29 @@
+body {
+  background-color: red;
+}
+
+.main {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.info {
+  width: 300px;
+}
+.two-columns {
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.questions {
+  height: 2rem;
+  background-color: yellow;
+}
+
+.answer {
+  width: 50px;
+}
