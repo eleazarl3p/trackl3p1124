@@ -383,7 +383,7 @@ export class QcService {
       }
       .questions {
         height: 2rem;
-        background-color: yellow;
+        
         word-wrap: break-word; /* Break long words if necessary */
       }
       .answer {

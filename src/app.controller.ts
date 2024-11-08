@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/heap')
+  memoryUsage(): object {
+    return this.appService.getMemoryUsage();
+  }
+
+  @Get('heap/alocation')
+  alocation() {
+    return this.appService.getHeapStatistics();
+  }
 }
