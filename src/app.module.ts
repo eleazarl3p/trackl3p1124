@@ -17,9 +17,9 @@ import { ShapeModule } from './shape/shape.module';
 import { TeamModule } from './team/team.module';
 import { TaskModule } from './task/task.module';
 import { TruckModule } from './truck/truck.module';
-import { QcModule } from './qc/qc.module';
+// import { QcModule } from './qc/qc.module';
 import { SpecialuserModule } from './specialuser/specialuser.module';
-import { GldriveModule } from './gldrive/gldrive.module';
+// import { GldriveModule } from './gldrive/gldrive.module';
 
 import * as dotenv from 'dotenv';
 
@@ -54,9 +54,9 @@ dotenv.config();
     TeamModule,
     TaskModule,
     TruckModule,
-    QcModule,
+    // QcModule,
     SpecialuserModule,
-    GldriveModule,
+    // GldriveModule,
   ],
   controllers: [AppController],
   providers: [AppService],
