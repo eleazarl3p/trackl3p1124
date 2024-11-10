@@ -5,6 +5,7 @@ yarn add @nestjs/typeorm typeorm mysql2
 yarn add @nestjs/swagger
 yarn add bcrypt
 yarn @nestjs/jwt @nestjs/passport passport passport-jwt
+yarn add class-validator class-transformer
 
 Docker
 docker build -t shoptrack_api .
