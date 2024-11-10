@@ -348,10 +348,8 @@ export class QcService {
     answers: string[],
     photos: string[],
   ): string {
-    const html = `
-<!doctype html>
-<html lang="en">
-  <head>
+    const head = `
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -430,7 +428,13 @@ export class QcService {
         font-size: 16px;
       }
     </style>
-  </head>
+    </head>
+  `;
+
+    const html = `
+<!doctype html>
+<html lang="en">
+  ${head}
   <body>
     <div class="main">
       <h1>Report</h1>
