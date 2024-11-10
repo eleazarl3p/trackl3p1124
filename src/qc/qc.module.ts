@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-// import { QcService } from './qc.service';
-// import { QcController } from './qc.controller';
+import { QcService } from './qc.service';
+import { QcController } from './qc.controller';
 import { TaskModule } from 'src/task/task.module';
 import { JobModule } from 'src/job/job.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -24,7 +24,7 @@ import { InspectionCriteria } from './entity/inspection-criteria.entity';
     JobModule,
     // GldriveModule,
   ],
-  // controllers: [QcController],
-  // providers: [QcService],
+  controllers: [QcController],
+  providers: [QcService],
 })
 export class QcModule {}
